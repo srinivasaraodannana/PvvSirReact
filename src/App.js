@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+
 import Ccrusher from './compaction/crusher';
 import Home from './home'
 import Compaction from './compaction';

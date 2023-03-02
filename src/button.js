@@ -1,5 +1,6 @@
 import './App.css';
 import { Table4 } from './table';
+import React from 'react';
 
 function alt(){
   alert("This experiment not yet done")

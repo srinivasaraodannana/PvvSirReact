@@ -1,6 +1,7 @@
 import { Table2 } from "../table";
 import { Button1 } from "../button";
 import Nav from "../nav";
+import React from 'react';
 
  function Dmixed(){
   var a=[];

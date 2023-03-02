@@ -1,4 +1,6 @@
 import { Chart } from "react-google-charts";
+import React from 'react';
+
 function MyChart(){
   return(
 <Chart

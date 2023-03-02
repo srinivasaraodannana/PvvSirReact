@@ -1,6 +1,9 @@
 import Nav from './nav'
 import  { Button } from './button';
 import { Link } from 'react-router-dom';
+import React from 'react';
+
+
 function Sieve(){
   return (
     <>
