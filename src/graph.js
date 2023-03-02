@@ -1,13 +1,30 @@
-import { Chart } from "react-google-charts";
 import React from 'react';
 
-function MyChart(){
-  return(
-<Chart
-  chartType="ScatterChart"
-  data={[["Age", "Weight"], [4, 5.5], [8, 12]]}
-  width="100%"
-  height="400px"
-  legendToggle
-/>)}
+
+
+
+const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+const data={
+  labels,
+  datasets:[
+    {
+      labels:"2020 ex",
+      data:[1,2,3,4,5,7,6],
+      backgroundColor:'pink'
+    },
+    {
+      labels:"2021 ex",
+      data:[1,2,3,4,5,7,6],
+      backgroundColor:'green'
+    } 
+  ]
+}
+function MyChart() {
+  return (
+    <>
+    
+    </>
+  )
+}
+
 export default MyChart;
