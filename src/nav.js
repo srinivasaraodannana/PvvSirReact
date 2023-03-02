@@ -2,29 +2,33 @@ import { Link } from "react-router-dom";
 const Nav=()=>{
   return (
     <>
-   <nav className="navbar navbar-inverse mt-2" style={{color:"white"}}>
-  <div className="container-fluid">
-    <div className="navbar-header">
-      <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span className="icon-bar"></span>
-        <span className="icon-bar"></span>
-        <span className="icon-bar"></span>                        
-      </button>
-      <Link to="/" className="navbar-brand">PVV Sir Project</Link>
-    </div>
-    <div className="collapse navbar-collapse" id="myNavbar" >
-      <ul className="nav navbar-nav" style={{marginLeft:10,}}>
-        <li ><Link to="/"> Home</Link></li>
-        <li >
-       <Link to='/compaction'>   Compaction Test</Link> 
-          
+  
+
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark" style={{marginTop:"20px",paddingTop:"10px"}}>
+  <div class="container-fluid">
+  <Link to="/" className="navbar-brand">PVV Sir Project</Link>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+      <li class="nav-item">
+        <Link to="/" class="nav-link"> Home</Link>
         </li>
-        <li> <Link to="/">Direct Shear Test</Link></li>
-        <li> <Link to="/">Sieve Analysis</Link></li>
-        <li> <Link to="/">CBR</Link></li>
+        <li class="nav-item">
+        <Link to='/compaction' class="nav-link">   Compaction Test</Link> 
+        </li>
+      <li class="nav-item"> <Link to="/direct" class="nav-link" >Direct Shear Test</Link></li>
         
+          
+        <li class="nav-item">
+        <Link to="/sieve" class="nav-link">Sieve Analysis</Link>
+        </li>  
+         <li class="nav-item">
+         <Link to="#" class="nav-link">CBR</Link>
+        </li>    
       </ul>
-    
     </div>
   </div>
 </nav>

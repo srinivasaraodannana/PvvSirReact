@@ -1,18 +1,17 @@
 import Nav from './nav'
-import Button from './button';
+import {Button} from './button';
 import { Link } from 'react-router-dom';
-
 
 function Direct(){
 
   
   return(
     <> <Nav />
-    <h2 style={{color:"black"}}>Direct Shear Test Results :-</h2>
+    <h2 style={{color:"black",marginTop:"30px"}}>Direct Shear Test Results :-</h2>
     <hr></hr>
     <div className="dropdown dropdown-menu-end d-grid gap-2 d-md-flex  btn-group-vertical text-center" role="group" style={{width:'80%',}}>
     <button id="btnGroupDrop1" type="button" className="btn btn-lg btn-block btn-outline-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-      Dropdown
+      Silico Manganese Slag
     </button>
     <ul className="dropdown-menu" aria-labelledby="btnGroupDrop1">
       <Link style={{ textDecoration: 'none' }} to='mixed'><li className='dropdown-item'>Mixed Sample</li></Link>

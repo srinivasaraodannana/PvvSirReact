@@ -1,6 +1,6 @@
 import { Table1 } from "../table";
 import MyChart from "../graph";
-
+import Nav from "../nav";
 
 
 
@@ -61,8 +61,8 @@ function Ciron(){
 
   return(
 <>
-
-<h1 className="text-center">Compaction Test Result Of Iron Ore</h1>
+<Nav></Nav>
+<h1 className="text-center" style={{marginTop:"30px"}}>Compaction Test Result Of Iron Ore</h1>
     <hr></hr>
      <Table1 ar={arr}></Table1>
      <MyChart ar={arr}></MyChart>

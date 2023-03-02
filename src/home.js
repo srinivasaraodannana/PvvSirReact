@@ -1,4 +1,4 @@
-import Button from "./button";
+
 import Nav from './nav'
 
 function Home(){

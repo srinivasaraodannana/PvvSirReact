@@ -1,6 +1,6 @@
 import { Table1 } from "../table";
 import MyChart from "../graph";
-
+import Nav from "../nav";
 
 function CSilicon(){
 
@@ -59,6 +59,7 @@ var arr=[['Water Content', '4.75mm-2mm', '2mm-425μ','475μ-75μ'],]
 console.log(arr)
   return(
     <>
+<Nav></Nav>
     <h1 className="text-center">Compaction Test Result Of Silico Manganese Slag</h1>
     <hr></hr>
      <Table1 ar={arr}></Table1>
