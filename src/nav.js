@@ -7,28 +7,28 @@ const Nav=()=>{
   
 
 
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark" style={{marginTop:"20px",paddingTop:"10px"}}>
-  <div class="container-fluid">
+<nav className="navbar navbar-expand-sm bg-dark navbar-dark" style={{marginTop:"20px",paddingTop:"10px"}}>
+  <div className="container-fluid">
   <Link to="/" className="navbar-brand">PVV Sir Project</Link>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span className="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class="navbar-nav">
-      <li class="nav-item">
-        <Link to="/" class="nav-link"> Home</Link>
+    <div className="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul className="navbar-nav">
+      <li className="nav-item">
+        <Link to="/" className="nav-link"> Home</Link>
         </li>
-        <li class="nav-item">
-        <Link to='/compaction' class="nav-link">   Compaction Test</Link> 
+        <li className="nav-item">
+        <Link to='/compaction' className="nav-link">   Compaction Test</Link> 
         </li>
-      <li class="nav-item"> <Link to="/direct" class="nav-link" >Direct Shear Test</Link></li>
+      <li className="nav-item"> <Link to="/direct" className="nav-link" >Direct Shear Test</Link></li>
         
           
-        <li class="nav-item">
-        <Link to="/sieve" class="nav-link">Sieve Analysis</Link>
+        <li className="nav-item">
+        <Link to="/sieve" className="nav-link">Sieve Analysis</Link>
         </li>  
-         <li class="nav-item">
-         <Link to="#" class="nav-link">CBR</Link>
+         <li className="nav-item">
+         <Link to="#" className="nav-link">CBR</Link>
         </li>    
       </ul>
     </div>

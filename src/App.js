@@ -14,7 +14,7 @@ import D42575 from './direct/425-75';
 import D4752 from './direct/4.75-2';
 import Sieve from './sieve';
 import { BrowserRouter, Route,Routes } from 'react-router-dom';
-import Ssilico, { Scrusher, Siron } from './sieve/Ssilico';
+import  { Ssilico,Scrusher, Siron } from './sieve/Ssilico';
 
 function App() {
   return (

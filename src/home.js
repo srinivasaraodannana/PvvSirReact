@@ -1,11 +1,11 @@
 import React from 'react';
 
 import Nav from './nav'
-import MyChart from './graph';
+
 function Home(){
   return(
 <>
-<MyChart/>
+
 <Nav />
 <div style={{color:"black",paddingTop:"10px",fontSize:'20px'}}>
 

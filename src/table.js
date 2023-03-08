@@ -1,6 +1,6 @@
 import React from 'react';
 import './index.css';
-
+import { MyChart2 } from './graph';
 
 
 export function Table1(props){
@@ -53,6 +53,70 @@ export function Table3(prop){
     cumulative_percent_retained.push(a.toFixed(2))
     cumulative_percent_passing.push((100-a).toFixed(2))
   }
+  const sieveDataQ = {
+    labels: sieve_size,
+    datasets: [
+      {
+        label: "Cumulative percent passing",
+        data: cumulative_percent_passing,
+      },
+    ],
+  };
+  
+
+  const findSieveSize = (cumulative_percent_passing) => {
+    // Find the closest values in the cumulative_percent_passing array to the target value
+    let lowerIndex = 0;
+    let upperIndex = sieveDataQ.datasets[0].data.length - 1;
+    for (let i = 0; i < sieveDataQ.datasets[0].data.length; i++) {
+      if (sieveDataQ.datasets[0].data[i] <= cumulative_percent_passing) {
+        lowerIndex = i;
+        break;
+      }
+    }
+    for (let i = sieveDataQ.datasets[0].data.length - 1; i >= 0; i--) {
+      if (sieveDataQ.datasets[0].data[i] >= cumulative_percent_passing) {
+        upperIndex = i;
+        break;
+      }
+    }
+  
+    // Calculate the sieve size corresponding to the target cumulative percent passing
+    let lowerValue = sieveDataQ.datasets[0].data[lowerIndex];
+    let upperValue = sieveDataQ.datasets[0].data[upperIndex];
+    let lowerSize = sieveDataQ.labels[lowerIndex];
+    let upperSize = sieveDataQ.labels[upperIndex];
+    let sieveSize = lowerSize + (cumulative_percent_passing - lowerValue) * (upperSize - lowerSize) / (upperValue - lowerValue);
+  
+    return sieveSize;
+  };
+  
+  
+  let D10=findSieveSize(10)
+  D10=D10.toFixed(2)
+  let D30=findSieveSize(30)
+  D30=D30.toFixed(3)
+  let D60=findSieveSize(60)
+  D60=D60.toFixed(2)
+  
+  
+  
+  
+  
+  let Cu = D60 / D10;
+  Cu=Cu.toFixed(2)
+  let Cc = (D30 * D30) / (D10 * D60);
+  Cc=Cc.toFixed(2)
+  
+  // Perform the IS classification
+  let classification = "";
+  if (Cu > 4) {
+    classification = "Coarse Grained ";
+  } else if (Cu <= 4 && Cu >= 2) {
+    classification = "Medium Grained ";
+  } else if (Cu < 2) {
+    classification = "Fine Grained ";
+  }
 
 
 
@@ -79,10 +143,16 @@ export function Table3(prop){
           table += "</tr>";
         }
         table += "</tbody></table>";
+
+
+  var res=`<h5 class="text-center">Total Weight = ${total_wt} grams </h5><h3 class="text-center"> D30=${D30},D60=${D60},D10=${D10}<br><br>
+  Cu=${Cu},Cc=${Cc}<br><br>Classification=${classification}</h3> <br><br>`;      
   return(
     <>
-    
     <div dangerouslySetInnerHTML={{ __html: table }}></div>
+   
+    <div dangerouslySetInnerHTML={{ __html: res }}></div>
+    <MyChart2 sieve_size={sieve_size} cumulative_percent_passing={cumulative_percent_passing}/>
     
     
     </>

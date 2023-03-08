@@ -2,6 +2,7 @@ import { Table2 } from "../table";
 import { Button1 } from "../button";
 import Nav from "../nav";
 import React from 'react';
+import { MyChart1 } from "../graph";
 
  function Dmixed(){
   var a=[];
@@ -12,7 +13,7 @@ import React from 'react';
   }
   
   var b=[22.71,38.86,37.26,37.63,13.0];
-
+  
 
 
 
@@ -25,6 +26,7 @@ import React from 'react';
 <h1 className="text-center">Direct Shear Test Result Of Silico Manganese Slag[2mm-425μ]</h1>
 <hr/>
 <Table2 a={a} b={b}></Table2>
+<MyChart1 a={a} b={b}/>
 {
   allvalues.map(
     (u)=>{
@@ -32,6 +34,7 @@ import React from 'react';
     }
   )
 }
+
 
 
 

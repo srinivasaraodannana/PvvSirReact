@@ -1,5 +1,5 @@
 import { Table1 } from "../table";
-import MyChart from "../graph";
+import {MyChart} from "../graph";
 import Nav from "../nav";
 import React from 'react';
 
