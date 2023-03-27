@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Plot from 'react-plotly.js';
-
-
+import regression from 'regression';
+import { Chart } from "react-google-charts";
 export function MyChart(props) {
   var abc=props.ar.map((item) => item[0])
   console.log(abc);
@@ -239,7 +239,123 @@ export function MyChart3(props) {
   } else {
     return <div>No data to display.</div>;
   }
-}  
+} 
 
 
-export default (MyChart,MyChart1,MyChart2);
+
+
+
+export function MyChart4(prop) {
+  const chartData = [
+    ["Shear Stress", "Normal Stress"],
+    [ prop.allvalues[1][0],prop.allvalues[2][0]],
+    [prop.allvalues[1][1],prop.allvalues[2][1]],
+    [prop.allvalues[1][2],prop.allvalues[2][2]],
+
+  ];
+  
+
+console.log(chartData)
+  const chartOptions = {
+    width: 800,
+    height: 400,
+    hAxis: {
+      title: "Normal Stress(Kg/Cm2)",
+      minValue: 0,
+      maxValue: 0,
+    },
+    vAxis: {
+      title: "Shear Stress(Kg/Cm2)",
+      minValue: 0,
+      maxValue: 0.5,
+    },
+    //legend: 'none',
+    trendlines: {
+      0: {
+        type: "linear",
+        color: "#00b4d8",
+        opacity: 1,
+        showR2: false,
+        visibleInLegend: false,
+        
+        
+      },
+    },
+  };
+   
+
+  return (
+    <div className="text-center" style={{ display: "flex", justifyContent: "center", paddingLeft: '50px' }}>
+      <Chart
+        chartType="ScatterChart"
+        data={chartData}
+        options={chartOptions}
+        width="100%"
+        height="400px"
+      />
+      <div id="yInterceptDiv" style={{ marginTop: "10px", fontWeight: "bold" }}></div>
+    </div>
+  );
+}
+
+
+
+export function MyChart5(prop) {
+  const chartData = [
+    ["Load (Kg)", "Deformation (mm)"],
+    [ prop.a[0],prop.b[0]],
+    [prop.a[1],prop.b[1]],
+    [prop.a[2],prop.b[2]],
+
+  ];
+  
+
+console.log(chartData)
+  const chartOptions = {
+    width: 800,
+    height: 400,
+    hAxis: {
+      title: "Load (Kg)",
+      minValue: 0,
+      maxValue: 0,
+    },
+    vAxis: {
+      title: "Deformation (mm)",
+      minValue: 0,
+      maxValue: 0.5,
+    },
+    //legend: 'none',
+    trendlines: {
+      0: {
+        type: "linear",
+        color: "#00b4d8",
+        opacity: 1,
+        showR2: false,
+        visibleInLegend: false,
+        
+        
+      },
+    },
+  };
+   
+
+  return (
+    <div className="text-center" style={{ display: "flex", justifyContent: "center", paddingLeft: '50px' }}>
+      <Chart
+        chartType="ScatterChart"
+        data={chartData}
+        options={chartOptions}
+        width="100%"
+        height="400px"
+      />
+      
+    </div>
+  );
+}
+
+
+
+
+
+
+export default (MyChart,MyChart1,MyChart2,MyChart4,MyChart5);

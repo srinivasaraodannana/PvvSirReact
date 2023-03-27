@@ -28,7 +28,10 @@ const Nav=()=>{
         <Link to="/sieve" className="nav-link">Sieve Analysis</Link>
         </li>  
          <li className="nav-item">
-         <Link to="#" className="nav-link">CBR</Link>
+         <Link to="/cbr" className="nav-link">CBR</Link>
+        </li> 
+        <li className="nav-item">
+         <Link to="#" className="nav-link">Consolidation</Link>
         </li>    
       </ul>
     </div>

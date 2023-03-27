@@ -203,7 +203,7 @@ export function Table4(prop){
 
 var x=prop.allvalues[1]
 var y=prop.allvalues[2]
-
+console.log(x,y)
 
 
 
@@ -284,7 +284,45 @@ console.log(x,y)
 }
 
 
+export function Table5(prop){
+ 
 
 
 
-export default (Table1,Table3, Table2,Table4);
+  var a=prop.a
+  var b=prop.b
+  var table = "<table class='table table-bordered' >";
+            table+='<thead > <tr>'
+          
+            table+='<th> Load (Kg)</th><th> Deformation (mm)</th> ';
+          
+             table+='</thead> </tr> <tbody> '
+         
+           
+            
+              
+            for (var j = 0; j < (a.length); j++) {
+              table += "<tr>";
+                     table += "<td>" + a[j] + "</td>";
+                     table += "<td>" + b[j] + "</td>";
+                     
+            
+              
+            
+            table += "</tr>";
+          }
+          table += "</tbody></table>";
+  
+      
+    return(
+      
+    
+      <>
+  <div dangerouslySetInnerHTML={{ __html: table }}></div>
+  </>
+    )
+  }
+
+
+
+export default (Table1,Table3, Table2,Table4,Table5);
